@@ -34,14 +34,16 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0"
+                      Background="#e6f1ff"
                       AutoGenerateColumns="True"
                       AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
                       Name="MarketOrderBookDataGrid"
-                      AlternatingRowBackground="LightGray"
+                      RowBackground="#b3d4ff"
+                      AlternatingRowBackground="#e8f2ff"
                       AlternationCount="2"
-                      ItemsSource="{Binding OrderBooks}">
-                <!--<Market Order>-->
-            </DataGrid>
+                      ItemsSource="{Binding OrderBooks}" />
+            <!--<Market Order>-->
+
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="250" />
@@ -76,11 +78,11 @@
                                VerticalAlignment="Center" />
                     <ComboBox Grid.Column="1"
                               Grid.Row="2"
-                              Height="25" SelectedIndex="0"
+                              Height="25"
+                              SelectedIndex="0"
                               VerticalContentAlignment="Center"
                               ItemsSource="{Binding StrategyTypes}"
                               SelectedItem="{Binding Order.Side}">
-                        
                     </ComboBox>
                     <TextBlock Grid.Column="0"
                                Grid.Row="3"
@@ -109,11 +111,12 @@
                 </Grid>
                 <DataGrid Grid.Row="1"
                           Name="MarketTradesDataGrid"
-                          AlternatingRowBackground="LightGray"
+                          RowBackground="#b3d4ff"
+                          AlternatingRowBackground="#e8f2ff"
                           AlternationCount="2"
-                          ItemsSource="{Binding TradeHistory}">
-                    <!--<Market Trades History>-->
-                </DataGrid>
+                          ItemsSource="{Binding TradeHistory}" />
+                <!--<Market Trades History>-->
+
             </Grid>
         </Grid>
     </Grid>

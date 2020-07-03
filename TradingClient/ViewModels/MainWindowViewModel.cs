@@ -68,7 +68,7 @@ namespace TradingClient.ViewModels
         public IEnumerable<SideEnum> StrategyTypes =>
             Enum.GetValues(typeof(SideEnum)).Cast<SideEnum>();
 
-        private Order order = new Order(string.Empty, string.Empty, 0, 0.0);
+        private Order order = new Order(string.Empty, "Stock A", 0, 0.0);
 
         public Order Order
         {
