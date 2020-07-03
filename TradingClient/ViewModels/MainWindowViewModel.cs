@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 using TradingClient.Models;
@@ -48,6 +49,11 @@ namespace TradingClient.ViewModels
         /// <param name="obj"></param>
         private void Login(object obj)
         {
+            if (string.IsNullOrWhiteSpace(UserName))
+            {
+                MessageBox.Show("Invalid User Name", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
+            }
             timer.Start();
         }
 
@@ -108,6 +114,12 @@ namespace TradingClient.ViewModels
         #region ICommand
         public override async void Submit(object obj)
         {
+            if (Order.Price is 0 || Order.Quantity is 0)
+            {
+                MessageBox.Show("Invalid Data", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
+            }
+
             Order.UserId = UserName;
             await TransactionsWebManager.PostOrder(Order);
         }
