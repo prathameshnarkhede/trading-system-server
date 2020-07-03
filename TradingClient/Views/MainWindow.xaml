@@ -34,10 +34,10 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0"
-                      Background="#e6f1ff"
                       AutoGenerateColumns="True"
                       AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"
                       Name="MarketOrderBookDataGrid"
+                      Background="#e6f1ff"
                       RowBackground="#b3d4ff"
                       AlternatingRowBackground="#e8f2ff"
                       AlternationCount="2"
@@ -111,6 +111,7 @@
                 </Grid>
                 <DataGrid Grid.Row="1"
                           Name="MarketTradesDataGrid"
+                          Background="#e6f1ff"
                           RowBackground="#b3d4ff"
                           AlternatingRowBackground="#e8f2ff"
                           AlternationCount="2"
