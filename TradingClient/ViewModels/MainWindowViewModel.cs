@@ -124,5 +124,11 @@ namespace TradingClient.ViewModels
             await TransactionsWebManager.PostOrder(Order);
         }
         #endregion
+
+        ~MainWindowViewModel()
+        {
+            timer.Stop();
+            timer.Tick -= Timer_Tick;
+        }
     }
 }

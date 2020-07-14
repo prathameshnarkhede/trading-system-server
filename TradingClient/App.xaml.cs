@@ -16,8 +16,6 @@ namespace TradingClient
     {
         public App()
         {
-            MainWindow = new MainWindow();
-            MainWindow.DataContext = new MainWindowViewModel();
 
         }
     }
